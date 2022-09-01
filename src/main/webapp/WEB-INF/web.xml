@@ -4,8 +4,4 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
-  <resource-ref>
-   <res-ref-name>TenantContext</res-ref-name>
-   <res-type>com.sap.cloud.account.TenantContext</res-type>
-  </resource-ref>
 </web-app>
