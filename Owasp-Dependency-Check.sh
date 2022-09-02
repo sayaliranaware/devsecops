@@ -5,7 +5,7 @@ DC_DIRECTORY=$HOME/OWASP-Dependency-Check
 DC_PROJECT="dependency-check scan: $(pwd)"
 DATA_DIRECTORY="$DC_DIRECTORY/data"
 REPORT_DIRECTORY="$DC_DIRECTORY/reports"
-//CACHE_DIRECTORY="$DC_DIRECTORY/data/cache"
+
 
 if [ ! -d "$DATA_DIRECTORY" ]; then
     echo "Initially creating persistent directory: $DATA_DIRECTORY"
