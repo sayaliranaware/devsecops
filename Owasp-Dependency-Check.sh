@@ -5,7 +5,7 @@ DC_DIRECTORY=$HOME/OWASP-Dependency-Check
 DC_PROJECT="dependency-check scan: $(pwd)"
 DATA_DIRECTORY="$DC_DIRECTORY/data"
 REPORT_DIRECTORY="$DC_DIRECTORY/reports"
-CACHE_DIRECTORY="$DC_DIRECTORY/data/cache"
+//CACHE_DIRECTORY="$DC_DIRECTORY/data/cache"
 
 if [ ! -d "$DATA_DIRECTORY" ]; then
     echo "Initially creating persistent directory: $DATA_DIRECTORY"
@@ -16,10 +16,7 @@ if [ ! -d "$DATA_DIRECTORY" ]; then
     chmod -R 777 "$REPORT_DIRECTORY"
     
 fi
-if [ ! -d "$CACHE_DIRECTORY" ]; then
-    echo "Initially creating persistent directory: $CACHE_DIRECTORY"
-    mkdir -p "$CACHE_DIRECTORY"
-fi
+
 # Make sure we are using the latest version
 docker pull owasp/dependency-check
 
