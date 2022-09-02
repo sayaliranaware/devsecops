@@ -25,7 +25,7 @@ pipeline {
       steps{
         sh 'rm Owasp* || true'
         sh 'wget "https://raw.githubusercontent.com/sayaliranaware/webapp/master/Owasp-Dependency-Check.sh" '
-        sh 'shmod +x Owasp-Dependency-Check.sh'
+        sh 'chmod +x Owasp-Dependency-Check.sh'
         sh 'bash Owasp-Dependency-Check.sh'
         
       }
