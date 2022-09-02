@@ -12,7 +12,14 @@ pipeline {
              '''
       }
     }
-    
+    stage ('Check-Git-Secrets') { 
+      steps {
+        //sh 'docker pull gesellix/trufflehog' 
+        sh 'rm trufflehog || true'
+        sh 'docker run -t gesellix/trufflehog --json https://github.com/devopssecure/webapp.git › trufflehog'
+        sh 'cat trufflehog'
+          }
+    }
     stage ('Bulld') {
       steps {
       sh 'mvn clean package'
@@ -26,11 +33,6 @@ pipeline {
           }
       }
     }
-    //stage ('Check-Git-Secrets') { 
-      //steps {
-        //sh 'docker pull gesellix/trufflehog' 
-        //sh 'docker run -t gesellix/trufflehog --json https://github.com/devopssecure/webapp.git › trufflehog'
-          //}
-    //}
+    
   }
 }  
