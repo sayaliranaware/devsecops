@@ -20,6 +20,16 @@ pipeline {
         sh 'cat trufflehog'
           }
     }
+    
+    stage ('Source Composition Analysis'){
+      steps{
+        sh 'rm Owasp* || true'
+        sh 'wget 'https://raw.githubusercontent.com/sayaliranaware/webapp/master/Owasp-Dependency-Check.sh''
+        sh 'shmod +x Owasp-Dependency-Check.sh'
+        sh 'bash Owasp-Dependency-Check.sh'
+        
+      }
+    }
     stage ('Bulld') {
       steps {
       sh 'mvn clean package'
