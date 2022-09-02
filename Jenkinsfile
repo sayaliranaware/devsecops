@@ -16,9 +16,8 @@ pipeline {
       steps {
         //sh 'docker pull gesellix/trufflehog' 
         sh 'rm trufflehog || true'
-        sh 'docker run gesellix/trufflehog --json https://github.com/sayaliranaware/webapp.git › trufflehog'
+        sh 'docker run gesellix/trufflehog --json https://github.com/sayaliranaware/webapp.git > trufflehog'
         sh 'cat trufflehog'
-        
           }
     }
     stage ('Bulld') {
